@@ -2,21 +2,20 @@ package Hash;
 
 public class Pessoa {
 
-    private final String String;
+
     private String name;
     private String cpf;
     private int idade;
 
-  public  Pessoa(java.lang.String string){
-      String = string;
-      this.name = name;
-      this.cpf = cpf;
-      this.idade = idade;
-  }
+    public Pessoa() {
+        this.name = name;
+        this.cpf = cpf;
+        this.idade = idade;
+    }
 
     public Pessoa(String name, String cpf, int idade) {
         this.name = name;
-        this.String = cpf;
+        this.cpf = cpf;
         this.idade = idade;
     }
 
@@ -46,6 +45,6 @@ public class Pessoa {
 
     @Override
     public String toString(){
-      return "Nome: " + name + "CPF: " + cpf + "Idade: " + idade;
+      return "Nome: " +  name + "  CPF: " +  cpf + "  Idade: " +  idade;
     }
 }
