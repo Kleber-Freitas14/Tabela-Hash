@@ -9,13 +9,12 @@ public class Hash_Tabela {
         tabela = new Pessoa[tamanho];
     }
     //
-    private int hash (int cpf){
-        return Math.abs(cpf % tamanho);
+    private int hash (String cpf){
+        return Math.abs(cpf.hashCode() % tamanho);
     }
 
     public void inserir(Pessoa p){
         int pos = hash(p.getCpf());
-
 
         while (tabela[pos] != null){
             if (tabela[pos].getCpf() == (p.getCpf())){
@@ -25,6 +24,26 @@ public class Hash_Tabela {
             pos = (pos + 1) % tamanho;
         }
         tabela[pos] = p;
+    }
+
+    public Pessoa buscar(String cpf){
+        int pos = hash(cpf);
+
+        while (tabela[pos] != null){
+            if (tabela[pos].getCpf() == (cpf)){
+                return tabela[pos];
+            }
+            pos = (pos + 1 ) % tamanho;
+        }
+        return null;
+    }
+
+    public void mostrar(){
+        for (Pessoa p : tabela){
+            if (p != null){
+                System.out.println(p);
+            }
+        }
     }
 
 

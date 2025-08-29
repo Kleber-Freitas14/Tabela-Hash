@@ -1,19 +1,22 @@
 package Hash;
 
 public class Pessoa {
+
+    private final String String;
     private String name;
-    private int cpf;
+    private String cpf;
     private int idade;
 
-  public  Pessoa(){
+  public  Pessoa(java.lang.String string){
+      String = string;
       this.name = name;
       this.cpf = cpf;
       this.idade = idade;
   }
 
-    public Pessoa(String name, int cpf, int idade) {
+    public Pessoa(String name, String cpf, int idade) {
         this.name = name;
-        this.cpf = cpf;
+        this.String = cpf;
         this.idade = idade;
     }
 
@@ -25,12 +28,12 @@ public class Pessoa {
         this.name = name;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
     public void setCpf(int cpf) {
-        this.cpf = cpf;
+        this.cpf = java.lang.String.valueOf(cpf);
     }
 
     public int getIdade() {
